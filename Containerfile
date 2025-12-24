@@ -7,7 +7,7 @@ ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS base
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION}
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
