@@ -59,4 +59,4 @@ systemctl enable libvirtd
 #systemctl enable podman.socket
 
 # Removing starship from system bashrc bashconfig, becuse I don't like bling in bash.
-sed -i.bak '/starship init bash/s/^/# /' /etc/bashrc
+# sed -i.bak '/starship init bash/s/^/# /' /etc/bashrc
