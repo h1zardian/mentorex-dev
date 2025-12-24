@@ -53,8 +53,7 @@ dnf5 install -y --allowerasing \
 #### Example for enabling a System Unit File
 systemctl disable gdm
 systemctl disable sddm
-systemctl enable cosmic-greeter 
-systemctl enable libvirtd
+systemctl enable cosmic-greeter
 
 #systemctl enable podman.socket
 
