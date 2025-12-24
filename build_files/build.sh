@@ -18,7 +18,6 @@ dnf5 install -y @cosmic-desktop-environment
 PACKAGES=(
     bibata-cursor-themes
     papirus-icon-theme
-    gparted
 )
 
 # Cosmic Packages
