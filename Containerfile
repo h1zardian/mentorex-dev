@@ -1,9 +1,13 @@
 # Allow build scripts to be referenced without being copied into the final image
+ARG BASE_IMAGE_NAME="base"
+ARG FEDORA_MAJOR_VERSION="43"
+ARG SOURCE_IMAGE="${BASE_IMAGE_NAME}-main"
+ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
+
 FROM scratch AS ctx
 COPY build_files /
 
-# Base Image
-FROM ghcr.io/ublue-os/bluefin-dx:stable
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS base
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest

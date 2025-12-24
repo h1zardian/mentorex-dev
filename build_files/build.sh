@@ -13,14 +13,12 @@ set -ouex pipefail
 dnf5 -y copr enable peterwu/rendezvous
 
 dnf5 install -y @cosmic-desktop-environment
-dnf5 group install -y --with-optional virtualization
 
 # Base Packages
 PACKAGES=(
     bibata-cursor-themes
     papirus-icon-theme
     gparted
-    java-25-openjdk
 )
 
 # Cosmic Packages
@@ -28,6 +26,8 @@ PACKAGES+=(
     NetworkManager-openvpn
     xdg-user-dirs
     gnome-keyring
+    gnome-keyring-pam
+    NetworkManager-tui
 )
 
 # Remove Unneeded and Disable Repos
@@ -51,7 +51,8 @@ dnf5 install -y --allowerasing \
 # dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-systemctl disable gdm 
+systemctl disable gdm
+systemctl disable sddm
 systemctl enable cosmic-greeter 
 systemctl enable libvirtd
 
